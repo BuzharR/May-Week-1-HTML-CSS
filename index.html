@@ -7,55 +7,100 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="cards-container">
-        <div class="card">
-            <h1 class="card-title">Hobby</h1>
-            <p class="card-price">Free</p>
-            <div class="card-content">
-                <p class="includes-text">Includes:</p>
-                <ul class="features-list">
-                    <li>
-                        <span class="checkmark">✓</span>
-                        No credit card required
-                    </li>
-                    <li>
-                        <span class="checkmark">✓</span>
-                        Limited Agent requests
-                    </li>
-                    <li>
-                        <span class="checkmark">✓</span>
-                        Limited Tab completions
-                    </li>
-                </ul>
+    <div class="page">
+        <header class="page-header">
+            <h1 class="page-title">Pricing plans</h1>
+            <p class="page-subtitle">Pick the plan that fits your workflow today.</p>
+        </header>
+
+        <div class="cards-container">
+            <div class="card" onclick="selectCard(this)">
+                <h1 class="card-title">Hobby</h1>
+                <p class="card-price">Free</p>
+                <div class="card-content">
+                    <p class="includes-text">Includes:</p>
+                    <ul class="features-list">
+                        <li>
+                            <span class="checkmark">✓</span>
+                            No credit card required
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Limited Agent requests
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Limited Tab completions
+                        </li>
+                    </ul>
+                </div>
+                <button class="download-button">Download</button>
             </div>
-            <button class="download-button">Download</button>
+            <div class="card" onclick="selectCard(this)">
+                <h1 class="card-title">Pro</h1>
+                <p class="card-price">$20/mo.</p>
+                <div class="card-content">
+                    <p class="includes-text">Everything in Hobby, plus:</p>
+                    <ul class="features-list">
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Extended limits on Agent
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Unlimited Tab completions
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Background Agents
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Maximum context windows
+                        </li>
+                    </ul>
+                </div>
+                <button class="download-button">Get Pro</button>
+            </div>
+            <div class="card" onclick="selectCard(this)">
+                <h1 class="card-title">Business</h1>
+                <p class="card-price">$40/mo.</p>
+                <div class="card-content">
+                    <p class="includes-text">Everything in Pro, plus:</p>
+                    <ul class="features-list">
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Team collaboration &amp; shared workspaces
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Centralized billing &amp; admin controls
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            SSO and organization-wide policies
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Priority support &amp; onboarding
+                        </li>
+                    </ul>
+                </div>
+                <button class="download-button">Get Business</button>
+            </div>
         </div>
-        <div class="card">
-            <h1 class="card-title">Pro</h1>
-            <p class="card-price">$20/mo.</p>
-            <div class="card-content">
-                <p class="includes-text">Everything in Hobby, plus:</p>
-                <ul class="features-list">
-                    <li>
-                        <span class="checkmark">✓</span>
-                        Extended limits on Agent
-                    </li>
-                    <li>
-                        <span class="checkmark">✓</span>
-                        Unlimited Tab completions
-                    </li>
-                    <li>
-                        <span class="checkmark">✓</span>
-                        Background Agents
-                    </li>
-                    <li>
-                        <span class="checkmark">✓</span>
-                        Maximum context windows
-                    </li>
-                </ul>
-            </div>
-            <button class="download-button">Get Pro</button>
+
+        <div class="page-footer">
+            <button class="next-button" id="nextBtn" disabled>Next</button>
         </div>
     </div>
+
+    <script>
+        function selectCard(card) {
+            document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            document.getElementById('nextBtn').disabled = false;
+        }
+    </script>
 </body>
 </html>
